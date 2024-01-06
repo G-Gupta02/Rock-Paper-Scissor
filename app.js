@@ -44,6 +44,8 @@ userChoiceBtn.forEach((choice)=>{
 
 let resetBtn=document.querySelector(".resetGame");
 const resetGame=()=>{
+    compScore=0;
+    userScore=0;
     userDispScore.innerText = 0;
     compDispScore.innerText = 0;
 }
