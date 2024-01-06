@@ -42,7 +42,7 @@ userChoiceBtn.forEach((choice)=>{
     })
 });
 
-let resetBtn=document.querySelector(".resetGame");
+let resetBtn=document.querySelector(".resetBtn");
 const resetGame=()=>{
     compScore=0;
     userScore=0;
