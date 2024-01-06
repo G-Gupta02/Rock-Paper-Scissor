@@ -1,96 +1,59 @@
-*{
-    margin: 0;
-    background-color: antiquewhite;
-}
+const userChoiceBtn=document.querySelectorAll(".choice");
 
-.border{
-    border: 10px solid transparent;
+let userScore=0;
+let compScore=0;
+
+let userDispScore=document.querySelector(".user-score");
+let compDispScore=document.querySelector(".comp-score");
+const genCompChoice=()=>{
+    let icons=["rock", "paper", "scissor"];
+    let compIndex=Math.floor(Math.random()*3);
+    return icons[compIndex];
 }
-.border:hover{
-    border: 10px solid black;
-}
-h1{
-    background-color: rgb(25, 25, 72);
-}
-.heading{
-    height: 5rem;
+let message=document.querySelector(".msg");
+userChoiceBtn.forEach((choice)=>{
     
-    background-color: rgb(25, 25, 72);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin-bottom: 4rem;
-}
+    choice.addEventListener("click", ()=>{
+        const userChoice=choice.getAttribute("id");
+        const compChoice=genCompChoice();
+        if(userChoice===compChoice){
+            console.log("draw");
+            message.innerText="Game Draw, Try again!";
+        }
+        else if(userChoice==="rock" && compChoice==="scissor"){
+            console.log("user won");
+            userScore++;
+            message.innerText="You Won!";
+        }
+        else if(userChoice==="paper" && compChoice==="rock"){
+            console.log("user won");
+            userScore++;
+            message.innerText="You Won!";
+        }
+        else if(userChoice==="scissor" && compChoice==="paper"){
+            console.log("user won");
+            userScore++;
+            message.innerText="You Won!";
+        }
+        else{
+            console.log("computer won");
+            compScore++;
+            message.innerText="Computer Won";
+        }
+        console.log("comp score " + compScore);
+        console.log("user score " + userScore);
+        userDispScore.innerText = userScore;
+        compDispScore.innerText = compScore;
+    })
+});
 
-.choice{
-    height: 200px;
-    width: 200px;
-}
-.choices{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-around;
-}
-img{
-    height: 10rem;
-    width: 10rem;
-    object-fit: cover;
-    border-radius: 50%
-    
-}
-
-.score-board{
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6rem;
-    margin-top: 60px;
-    
-}
-
-p{
-    display: flex;
-    justify-content: center;
-    margin-top: 9px;
-    background-color: darkseagreen;
-    font-size: 30px;
-}
-.score{
-    width: 100px;
-    height: 100px;
-    background-color: darkseagreen;
-    border-radius: 13px;
-}
-
-.message{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 5rem;
-    color: white;
-}
-.msg{
-    background-color: rgb(175, 132, 221);
-    padding: 10px;
-    font-size: 1.7rem;
-    border-radius: 10px;
-}
-.resetGame{
-    display: flex;
-    justify-content: center;
-    margin-top: 60px;
-    
+let resetBtn=document.querySelector(".resetBtn");
+const resetGame=()=>{
+    compScore=0;
+    userScore=0;
+    userDispScore.innerText = 0;
+    compDispScore.innerText = 0;
 
 }
-.resetBtn{
-    background-color: rgb(34, 34, 85);
-    padding: 15px;
-    font-size: 25px;
-    color: white;
-    border-radius: 10px;
 
-}
+resetBtn.addEventListener("click", resetGame);
