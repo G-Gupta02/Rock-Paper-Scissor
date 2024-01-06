@@ -10,6 +10,7 @@ const genCompChoice=()=>{
     let compIndex=Math.floor(Math.random()*3);
     return icons[compIndex];
 }
+let message=document.querySelector(".msg");
 userChoiceBtn.forEach((choice)=>{
     
     choice.addEventListener("click", ()=>{
@@ -17,23 +18,27 @@ userChoiceBtn.forEach((choice)=>{
         const compChoice=genCompChoice();
         if(userChoice===compChoice){
             console.log("draw");
-            userScore++;
+            message.innerText="Game Draw, Try again!";
         }
         else if(userChoice==="rock" && compChoice==="scissor"){
             console.log("user won");
             userScore++;
+            message.innerText="You Won!";
         }
         else if(userChoice==="paper" && compChoice==="rock"){
             console.log("user won");
             userScore++;
+            message.innerText="You Won!";
         }
         else if(userChoice==="scissor" && compChoice==="paper"){
             console.log("user won");
             userScore++;
+            message.innerText="You Won!";
         }
         else{
             console.log("computer won");
             compScore++;
+            message.innerText="Computer Won";
         }
         console.log("comp score " + compScore);
         console.log("user score " + userScore);
@@ -48,6 +53,7 @@ const resetGame=()=>{
     userScore=0;
     userDispScore.innerText = 0;
     compDispScore.innerText = 0;
+
 }
 
 resetBtn.addEventListener("click", resetGame);
