@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    background-color: antiquewhite;
 }
 
 .border{
@@ -7,6 +8,9 @@
 }
 .border:hover{
     border: 10px solid black;
+}
+h1{
+    background-color: rgb(25, 25, 72);
 }
 .heading{
     height: 5rem;
@@ -52,7 +56,7 @@ p{
     display: flex;
     justify-content: center;
     margin-top: 9px;
-    
+    background-color: darkseagreen;
     font-size: 30px;
 }
 .score{
@@ -62,10 +66,23 @@ p{
     border-radius: 13px;
 }
 
+.message{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    color: white;
+}
+.msg{
+    background-color: rgb(175, 132, 221);
+    padding: 10px;
+    font-size: 1.7rem;
+    border-radius: 10px;
+}
 .resetGame{
     display: flex;
     justify-content: center;
-    margin-top: 80px;
+    margin-top: 60px;
     
 
 }
@@ -75,4 +92,5 @@ p{
     font-size: 25px;
     color: white;
     border-radius: 10px;
+
 }
