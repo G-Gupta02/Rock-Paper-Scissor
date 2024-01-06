@@ -7,30 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="heading">
-        <h1>Rock Paper Scissor</h1>
-    </nav>
-
-    <div class="choices">
-        <div class="choice " id="rock"><img class="border" src="rock.png" alt=""></div>
-        <div class="choice" id="paper"><img class="border" src="paper.png" alt=""></div>
-        <div class="choice" id="scissor"><img class="border" src="scissor.png" alt=""></div>
-    </div>
-
-    <div class="score-board">
-        <div class="score">
-            <p class="user-score">0</p>
-            <p>User</p>
+    <div class="main">
+        <nav class="heading">
+            <h1>Rock Paper Scissor</h1>
+        </nav>
+    
+        <div class="choices">
+            <div class="choice " id="rock"><img class="border" src="rock.png" alt=""></div>
+            <div class="choice" id="paper"><img class="border" src="paper.png" alt=""></div>
+            <div class="choice" id="scissor"><img class="border" src="scissor.png" alt=""></div>
         </div>
-        <div class="score">
-            <p class="comp-score">0</p>
-            <p>Comp</p>
+    
+        <div class="score-board">
+            <div class="score">
+                <p class="user-score">0</p>
+                <p class="user-score">User</p>
+            </div>
+            <div class="score">
+                <p class="comp-score">0</p>
+                <p class="comp-score">Comp</p>
+            </div>
         </div>
-    </div>
+        
+        <div class="message">
+            <div class="msg">
+                Tap on any icon to start the Game
+            </div>
+        </div>
 
-    <div class="resetGame">
-        <div class="resetBtn">
-            <p>Reset Game</p>
+        <div class="resetGame">
+            <div class="resetBtn">
+                Reset Game
+            </div>
         </div>
     </div>
     <script src="app.js"></script>
